@@ -1,4 +1,4 @@
-const apiUrl = `https://api.thecatapi.com/v1/`;
+const apiUrl = `https://api.thecatapi.com/v1/images/search?limit=20`;
 const apiKey = 'live_3GnpeBrxnCyNIcmWhRS08rW8mk9bHlDtE2Z5S0h6Eg5IW4RkjCqWGwwO39kENZ4q'
 
 //fetches url for cat images
@@ -20,7 +20,7 @@ const apiKey = 'live_3GnpeBrxnCyNIcmWhRS08rW8mk9bHlDtE2Z5S0h6Eg5IW4RkjCqWGwwO39k
 
 // fetches url for cat breeds
 async function fetchCatBreeds() {
-    try{ const response = await fetch(`${apiUrl}breeds`, { //eeeeee
+    try{ const response = await fetch(`${apiUrl}breeds`, { 
             headers: {
                 'x-api-key': apiKey
             }
@@ -63,7 +63,7 @@ function displayResult(data) {
 //for cat pics
             if (item.url) { 
                 const img = document.createElement('img');
-                img.src = item.url; 
+                img.src = `${imageData.url}`; 
                 img.alt = 'Cat Image';
                 div.appendChild(img);
             }
