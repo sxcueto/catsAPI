@@ -20,7 +20,7 @@ const apiKey = 'live_3GnpeBrxnCyNIcmWhRS08rW8mk9bHlDtE2Z5S0h6Eg5IW4RkjCqWGwwO39k
 
 // fetches url for cat breeds
 async function fetchCatBreeds() {
-    try{ const response = await fetch(`${apiUrl}breeds`, {
+    try{ const response = await fetch(`${apiUrl}breeds`, { //ee
             headers: {
                 'x-api-key': apiKey
             }
