@@ -22,7 +22,7 @@ try{
  fetch('https://api.thecatapi.com/v1/images/search?breed_ids={breed.id}')
 
 if (!response.ok){
-        throw new Error ("Network error.");
+        throw new Error ("Network error."); //s
     }
     const catBreeds =  response.json();
     return catBreeds;
