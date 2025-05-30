@@ -1,4 +1,4 @@
-const apiUrl = `https://api.thecatapi.com/v1/`;
+const apiUrl = `https://api.thecatapi.com/v1/images/search?limit=20`;
 const apiKey = 'live_3GnpeBrxnCyNIcmWhRS08rW8mk9bHlDtE2Z5S0h6Eg5IW4RkjCqWGwwO39kENZ4q'
 
 //fetches url for cat images
@@ -20,7 +20,7 @@ const apiKey = 'live_3GnpeBrxnCyNIcmWhRS08rW8mk9bHlDtE2Z5S0h6Eg5IW4RkjCqWGwwO39k
 
 // fetches url for cat breeds
 async function fetchCatBreeds() {
-    try{ const response = await fetch(`${apiUrl}breeds`, { //eee
+    try{ const response = await fetch(`${apiUrl}breeds`, { 
             headers: {
                 'x-api-key': apiKey
             }
@@ -37,7 +37,7 @@ catch(error) {
 
 //radio buttons
 document.addEventListener('DOMContentLoaded', ()=>{
-   const radioButtons = document.querySelector('input[name="button"]'); 
+   const radioButtons = document.querySelectorAll('input[name="button"]'); 
    radioButtons.forEach(radio => {
     radio.addEventListener('change', async () => {
         let data;
@@ -63,14 +63,14 @@ function displayResult(data) {
 //for cat pics
             if (item.url) { 
                 const img = document.createElement('img');
-                img.src = item.image; 
+                img.src = `${imageData.url}`; 
                 img.alt = 'Cat Image';
                 div.appendChild(img);
             }
 //for cat breeds
-            if (item.breed) { 
+            if (item.breeds) { 
                 const p = document.createElement('p');
-                p.textContent = item.breed; 
+                p.textContent = item.breeds; 
                 div.appendChild(p);
             }
 
